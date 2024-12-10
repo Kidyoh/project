@@ -14,10 +14,10 @@ export default function Home() {
       <About />
       <EventDetails />
       <Benefits />
-      <Registration />
+      {/* <Registration />
       <Partners />
       <FAQ />
-      <Footer />
+      <Footer /> */}
     </main>
   );
 }
