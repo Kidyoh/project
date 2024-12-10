@@ -44,9 +44,14 @@ export function EventDetails() {
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 global-font bg-clip-text text-transparent bg-gradient-to-r from-[#FCB05F] to-[#CE3B1E]">Event Details</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {details.map((detail, index) => (
-            <div key={index} className="flex flex-col items-center text-center p-6 bg-background rounded-lg shadow-lg">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="flex flex-col items-center text-center p-6 bg-background rounded-lg shadow-lg"
+            >
               <div
-                key={index}
                 className={`mb-4 p-3 rounded-full ${index % 2 === 0 ? 'bg-primary/10 text-primary' : 'bg-primary/10 text-[#CE3B1E]'
                   }`}
               >
@@ -54,7 +59,7 @@ export function EventDetails() {
               </div>
               <h3 className="font-semibold mb-2">{detail.title}</h3>
               <p className="text-muted-foreground">{detail.content}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </motion.div>
