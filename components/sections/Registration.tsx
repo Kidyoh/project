@@ -19,7 +19,7 @@ export function Registration() {
         transition={{ duration: 0.8 }}
         className="max-w-3xl mx-auto"
       >
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Register Now</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 global-font bg-clip-text text-transparent bg-gradient-to-r from-[#FCB05F] to-[#CE3B1E]">Register Now</h2>
         <Card className="p-8 bg-white">
           <HubspotForm />
         </Card>

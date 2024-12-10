@@ -19,7 +19,7 @@ export function Hero() {
   };
 
   return (
-    <section ref={ref} className="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 hero-gradient overflow-hidden">
+    <section ref={ref} className="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 hero-gradient overflow-hidden hero-section">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -inset-[10px] opacity-50">
           <div className="w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(37,249,145,0.1),transparent_50%)]" />
@@ -31,7 +31,7 @@ export function Hero() {
         transition={{ duration: 0.8 }}
         className="text-center max-w-4xl mx-auto relative z-10"
       >
-        <h1 className="text-4xl sm:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#25F991] to-[#147A4B] mb-6">
+        <h1 className="text-4xl sm:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FCB05F] to-[#CE3B1E] mb-6">
           Empowering the Future of Work with AI and Web3
         </h1>
         <p className="text-lg sm:text-xl text-muted-foreground mb-8">
@@ -39,7 +39,7 @@ export function Hero() {
         </p>
         <Button 
           size="lg" 
-          className="bg-gradient-to-r from-[#25F991] to-[#147A4B] hover:opacity-90 transition-opacity glow"
+          className="bg-gradient-to-r from-[#FCB05F] to-[#CE3B1E] hover:opacity-90 transition-opacity glow"
           onClick={scrollToRegistration}
         >
           Register Now to Participate <ArrowRight className="ml-2 h-4 w-4" />

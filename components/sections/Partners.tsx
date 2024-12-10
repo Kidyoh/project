@@ -28,7 +28,7 @@ export function Partners() {
         transition={{ duration: 0.8 }}
         className="max-w-6xl mx-auto"
       >
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Our Organizers and Partners</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 global-font bg-clip-text text-transparent bg-gradient-to-r from-[#FCB05F] to-[#CE3B1E]">Our Organizers and Partners</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {partners.map((partner, index) => (
             <Card key={index} className="p-6 text-center">
