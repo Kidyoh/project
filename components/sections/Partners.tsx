@@ -3,6 +3,12 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Card } from "@/components/ui/card";
+import Image from 'next/image';
+import aastu from "@/public/aastu.png";
+import iceaddis from "@/public/ice-addis.png"
+import mint from "@/public/mint.png"
+import mastercard from "@/public/mastercard.png"
+import gdg from "@/public/gdg.png"
 
 export function Partners() {
   const [ref, inView] = useInView({
@@ -11,13 +17,13 @@ export function Partners() {
   });
 
   const partners = [
-    { name: "AASTU SET", role: "Support Partner" },
-    { name: "GDG Addis", role: "Support Partner" },
-    { name: "Superteam", role: "Support Partner" },
-    { name: "DeanslistDAO", role: "Support Partner" },
-    { name: "Iceaddis", role: "Host" },
-    { name: "Mastercard", role: "Host" },
-    { name: "MiNT", role: "Host" },
+    { name: "Iceaddis", role: "Host", logo: iceaddis },
+    { name: "Mastercard", role: "Host", logo: mastercard },
+    { name: "MiNT", role: "Host", logo: mint },
+    { name: "AASTU SET", role: "Support Partner", logo: aastu },
+    { name: "GDG Addis", role: "Support Partner", logo: gdg },
+    { name: "Superteam", role: "Support Partner", logo: "/logos/superteam.png" },
+    { name: "DeanslistDAO", role: "Support Partner", logo: "/logos/deanslistdao.png" },
   ];
 
   return (
@@ -32,6 +38,11 @@ export function Partners() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {partners.map((partner, index) => (
             <Card key={index} className="p-6 text-center">
+              {typeof partner.logo === 'string' ? (
+                <img src={partner.logo} alt={`${partner.name} logo`} className="mx-auto mb-4 h-32 w-32 object-contain logo-shadow" />
+              ) : (
+                <Image src={partner.logo} alt={`${partner.name} logo`} className="mx-auto mb-4 h-32 w-32 object-contain logo-shadow" />
+              )}
               <h3 className="font-semibold mb-2">{partner.name}</h3>
               <p className="text-sm text-muted-foreground">{partner.role}</p>
             </Card>
