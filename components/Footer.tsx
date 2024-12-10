@@ -13,23 +13,23 @@ export function Footer() {
             <div>
               <h3 className="font-semibold mb-4">Follow Us</h3>
               <div className="flex space-x-4">
-                <a href="#" className="text-muted-foreground hover:text-primary transition-transform transform hover:scale-110">
+                <a href="https://www.instagram.com/venturemeda/" className="text-muted-foreground hover:text-primary transition-transform transform hover:scale-110">
                   <Instagram className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-transform transform hover:scale-110">
-                  <MessageCircle className="h-5 w-5" />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-transform transform hover:scale-110">
+                <a href="https://www.linkedin.com/showcase/venturemeda/" className="text-muted-foreground hover:text-primary transition-transform transform hover:scale-110">
                   <Linkedin className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-transform transform hover:scale-110">
+                <a href="https://t.me/venturemeda" className="text-muted-foreground hover:text-primary transition-transform transform hover:scale-110">
+                  <MessageCircle className="h-5 w-5" />
+                </a>
+                <a href="https://x.com/Venture_Meda" className="text-muted-foreground hover:text-primary transition-transform transform hover:scale-110">
                   <Twitter className="h-5 w-5" />
                 </a>
               </div>
             </div>
             <div>
               <h3 className="font-semibold mb-4">Contact</h3>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-transform transform hover:scale-110">
+              <a href="https://t.me/venturemeda_bot" className="text-muted-foreground hover:text-primary transition-transform transform hover:scale-110">
                 <Send className="h-5 w-5" />
               </a>
               <p className="text-muted-foreground">Support via Telegram account and bot</p>
