@@ -6,18 +6,30 @@ import { Registration } from "@/components/sections/Registration";
 import { Partners } from "@/components/sections/Partners";
 import { FAQ } from "@/components/sections/FAQ";
 import { Footer } from "@/components/Footer";
+import Image from 'next/image'
+import Logo from '../public/venture_new_logo-aa8ce9b0.svg'
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
+      <div className="container mx-auto pt-4">
+        <Image
+          src={Logo}
+          alt="AASTU Web3 Hackathon Logo"
+          width={300}
+          height={100}
+          className="mb-4"
+        />
+      </div>
       <Hero />
       <About />
       <EventDetails />
       <Benefits />
-      {/* <Registration />
+      <Registration />
       <Partners />
       <FAQ />
-      <Footer /> */}
+      <Footer />
     </main>
   );
 }
+

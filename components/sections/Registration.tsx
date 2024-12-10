@@ -12,7 +12,7 @@ export function Registration() {
   });
 
   return (
-    <section ref={ref} className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+    <section id="registration" ref={ref} className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -27,3 +27,4 @@ export function Registration() {
     </section>
   );
 }
+

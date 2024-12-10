@@ -3,13 +3,20 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from 'lucide-react';
 
 export function Hero() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const scrollToRegistration = () => {
+    const registrationSection = document.getElementById('registration');
+    if (registrationSection) {
+      registrationSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section ref={ref} className="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 hero-gradient overflow-hidden">
@@ -30,10 +37,15 @@ export function Hero() {
         <p className="text-lg sm:text-xl text-muted-foreground mb-8">
           Join AASTU's exclusive Web3 Hackathon and unlock your potential in emerging technologies!
         </p>
-        <Button size="lg" className="bg-gradient-to-r from-[#25F991] to-[#147A4B] hover:opacity-90 transition-opacity glow">
+        <Button 
+          size="lg" 
+          className="bg-gradient-to-r from-[#25F991] to-[#147A4B] hover:opacity-90 transition-opacity glow"
+          onClick={scrollToRegistration}
+        >
           Register Now to Participate <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
       </motion.div>
     </section>
   );
 }
+
