@@ -9,7 +9,8 @@ import iceaddis from "@/public/ice-addis.png";
 import mint from "@/public/mint.png";
 import mastercard from "@/public/mastercard.png";
 import gdg from "@/public/gdg.png";
-import Deanslist from "@/public/deanslist.png"
+import deanslist from "@/public/deanslist.png"
+import superteam from "@/public/superteam.svg"
 
 export function Partners() {
   const [ref, inView] = useInView({
@@ -23,8 +24,8 @@ export function Partners() {
     { name: "MiNT", role: "Host", logo: mint },
     { name: "AASTU SET", role: "Support Partner", logo: aastu },
     { name: "GDG Addis", role: "Support Partner", logo: gdg },
-    { name: "Superteam", role: "Support Partner", logo: "/logos/superteam.png" },
-    { name: "DeanslistDAO", role: "Support Partner", logo: "/logos/deanslistdao.png" },
+    { name: "Superteam", role: "Support Partner", logo: superteam },
+    { name: "DeanslistDAO", role: "Support Partner", logo: deanslist },
   ];
 
   return (
