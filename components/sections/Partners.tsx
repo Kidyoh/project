@@ -9,6 +9,7 @@ import iceaddis from "@/public/ice-addis.png";
 import mint from "@/public/mint.png";
 import mastercard from "@/public/mastercard.png";
 import gdg from "@/public/gdg.png";
+import Deanslist from "@/public/deanslist.png"
 
 export function Partners() {
   const [ref, inView] = useInView({
