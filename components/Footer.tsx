@@ -28,11 +28,11 @@ export function Footer() {
               </div>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Contact</h3>
+              <h3 className="font-semibold mb-4">New Learning Materials</h3>
               <a href="https://t.me/venturemeda_bot" className="text-muted-foreground hover:text-primary transition-transform transform hover:scale-110">
                 <Send className="h-5 w-5" />
               </a>
-              <p className="text-muted-foreground">Support via Telegram account and bot</p>
+              <p className="text-muted-foreground">Click here to get free course</p>
             </div>
           </div>
           <hr className="my-8 border-t border-muted-foreground" />
