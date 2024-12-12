@@ -38,7 +38,7 @@ export function About() {
             <div className="space-y-4">
               <div>
                 <h3 className="font-semibold mb-2 text-primary">Hosted by:</h3>
-                <p className="text-muted-foreground">Iceaddis, Mastercard, MiNT</p>
+                <p className="text-muted-foreground">Iceaddis, Mastercard Foundation, MiNT</p>
               </div>
               <div>
                 <h3 className="font-semibold mb-2 text-primary">Supported by:</h3>

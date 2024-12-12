@@ -19,7 +19,7 @@ export function EventDetails() {
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Location",
-      content: "5kilo, AASTU Old Graduation Hall",
+      content: "AASTU Old Graduation Hall",
     },
     {
       icon: <Clock className="h-6 w-6" />,

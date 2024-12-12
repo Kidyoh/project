@@ -20,7 +20,7 @@ export function Partners() {
 
   const partners = [
     { name: "Iceaddis", role: "Host", logo: iceaddis },
-    { name: "Mastercard", role: "Host", logo: mastercard },
+    { name: "Mastercard Foundation", role: "Host", logo: mastercard },
     { name: "MiNT", role: "Host", logo: mint },
     { name: "AASTU SET", role: "Support Partner", logo: aastu },
     { name: "GDG Addis", role: "Support Partner", logo: gdg },
