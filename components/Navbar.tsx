@@ -46,9 +46,22 @@ export function Navbar() {
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
+    const navHeight = 80; // Height of your navbar
+
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      // Close mobile menu first
       setIsMobileMenuOpen(false);
+      
+      // Small delay to allow mobile menu to close
+      setTimeout(() => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - navHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }, 300); // 300ms delay to match the mobile menu animation duration
     }
   };
 
@@ -94,6 +107,7 @@ export function Navbar() {
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
+            aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
               <X className="h-6 w-6 text-white" />
@@ -111,7 +125,7 @@ export function Navbar() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden"
+              className="md:hidden overflow-hidden"
             >
               <div className="py-4 space-y-2 border-t border-white/10">
                 {navItems.map((item) => (

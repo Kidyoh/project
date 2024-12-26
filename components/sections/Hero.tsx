@@ -28,12 +28,12 @@ export function Hero() {
             className="inline-block px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10"
           >
             <p className="text-base sm:text-lg text-gray-300">
-              December 25, 2024 • AASTU Old Graduation Hall
+              January 11-13, 2024 • AASTU Old Graduation Hall
             </p>
           </motion.div>
 
           {/* Main Title */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-['Manrope'] font-bold tracking-tight">
             <span className="block bg-clip-text text-transparent bg-gradient-to-r from-[#FCB05F] to-[#CE3B1E]">
               AASTU Web3
             </span>
@@ -43,7 +43,7 @@ export function Hero() {
           </h1>
 
           {/* Description */}
-          <p className="max-w-2xl mx-auto text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">
+          <p className="max-w-2xl mx-auto text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed font-['Manrope']">
             Join us for an exciting journey into the future of technology with AI and Web3
           </p>
 
