@@ -8,6 +8,9 @@ import { FAQ } from "@/components/sections/FAQ";
 import { Footer } from "@/components/Footer";
 import Image from 'next/image'
 import Logo from '../public/venture_new_logo-aa8ce9b0.svg'
+import { Tracks } from "@/components/sections/Tracks";
+import { Prizes } from "@/components/sections/Prizes";
+import { TrackSummary } from "@/components/sections/TrackSummary";
 
 export default function Home() {
   return (
@@ -25,6 +28,9 @@ export default function Home() {
       <About />
       <EventDetails />
       <Benefits />
+      <Tracks />
+      <TrackSummary />
+      <Prizes />
       <Registration />
       <Partners />
       <FAQ />
