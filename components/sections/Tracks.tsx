@@ -121,7 +121,7 @@ const tracks = [
   {
     id: "bot",
     title: "Venture Meda Bot Challenge",
-    icon: "🤖",
+    icon: "🎯",
     gradient: "from-orange-500/20 via-red-500/20 to-pink-500/20",
     description: [
       "Enhance the Venture Meda Telegram Bot with innovative features",
