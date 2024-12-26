@@ -5,12 +5,14 @@ import { useInView } from "react-intersection-observer";
 import { Card } from "@/components/ui/card";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-
+import { AiOutlineRobot } from "react-icons/ai";
+import {BiBot} from "react-icons/bi";
+import {SiSolana} from "react-icons/si";
 const tracks = [
   {
     id: "solana",
     title: "Build on Solana",
-    icon: "⛓️",
+    icon: <SiSolana className="text-3xl" />,
     gradient: "from-blue-500/20 via-purple-500/20 to-pink-500/20",
     description: [
       "Create decentralized applications on the Solana blockchain",
@@ -65,7 +67,7 @@ const tracks = [
   {
     id: "ai",
     title: "AI Solutions with Agents.ai",
-    icon: "🤖",
+    icon: <AiOutlineRobot className="text-3xl" />, 
     gradient: "from-emerald-500/20 via-teal-500/20 to-cyan-500/20",
     description: [
       "Integrate AI with Blockchain using Agents.ai to solve real-world problems",
@@ -121,7 +123,7 @@ const tracks = [
   {
     id: "bot",
     title: "Venture Meda Bot Challenge",
-    icon: "🎯",
+    icon: <BiBot className="text-3xl" />,
     gradient: "from-orange-500/20 via-red-500/20 to-pink-500/20",
     description: [
       "Enhance the Venture Meda Telegram Bot with innovative features",
@@ -196,7 +198,7 @@ export function Tracks() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-4xl font-bold">TRACKS</h2>
+            <h2 className="text-4xl font-bold global-font">TRACKS</h2>
           </motion.div>
           <motion.p
             initial={{ opacity: 0, x: 20 }}
@@ -239,7 +241,7 @@ export function Tracks() {
             >
               <Card className="relative overflow-hidden">
                 <div className={`absolute inset-0 bg-gradient-to-br ${track.gradient} opacity-75 backdrop-blur-3xl`} />
-                
+
                 <div className="relative p-8 bg-black/80">
                   <div className="space-y-8">
                     <div className="space-y-4">
@@ -325,8 +327,8 @@ export function Tracks() {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="group"
                 >
-                  <div className="p-6 bg-white/5 rounded-lg border h-32 border-white/10 hover:border-orange-500/50 transition-all duration-300">
-                    <div className="flex items-start space-x-4">
+                  <div className="p-6 bg-white/5 rounded-lg border lg:h-32 border-white/10 hover:border-orange-500/50 transition-all duration-300">
+                    <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4">
                       <span className="text-3xl">{workshop.icon}</span>
                       <div>
                         <h4 className="text-white font-medium mb-2">{workshop.title}</h4>
