@@ -305,7 +305,7 @@ export function Tracks() {
         >
           <Card className="p-8 bg-black/20 border border-gray-800">
             <h3 className="text-2xl font-semibold mb-8 text-white flex items-center">
-              <span className="text-orange-500 mr-3">📚</span> Workshops & Learning Sessions
+              <span className="text-orange-500 mr-3 font-global">📚</span> Workshops & Learning Sessions
             </h3>
             <div className="grid md:grid-cols-2 gap-8">
               {[

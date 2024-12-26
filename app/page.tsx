@@ -11,29 +11,42 @@ import Logo from '../public/venture_new_logo-aa8ce9b0.svg'
 import { Tracks } from "@/components/sections/Tracks";
 import { Prizes } from "@/components/sections/Prizes";
 import { TrackSummary } from "@/components/sections/TrackSummary";
+import { Navbar } from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
-      <div className="container mx-auto pt-4 flex justify-center">
-        <Image
-          src={Logo}
-          alt="AASTU Web3 Hackathon Logo"
-          width={300}
-          height={100}
-          className="mb-4 filter-white"
-        />
+    <main className="min-h-screen bg-background font-['Manrope']">
+      <Navbar />
+      <div id="hero">
+        <Hero />
       </div>
-      <Hero />
-      <About />
-      <EventDetails />
-      <Benefits />
-      <Tracks />
-      <TrackSummary />
-      <Prizes />
-      <Registration />
-      <Partners />
-      <FAQ />
+      <div id="about">
+        <About />
+      </div>
+      <div id="event-details">
+        <EventDetails />
+      </div>
+      <div id="benefits">
+        <Benefits />
+      </div>
+      <div id="tracks">
+        <Tracks />
+      </div>
+      <div id="track-summary">
+        <TrackSummary />
+      </div>
+      <div id="prizes">
+        <Prizes />
+      </div>
+      <div id="registration">
+        <Registration />
+      </div>
+      <div id="partners">
+        <Partners />
+      </div>
+      <div id="faq">
+        <FAQ />
+      </div>
       <Footer />
     </main>
   );

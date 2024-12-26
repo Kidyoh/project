@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Changa:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -53,11 +53,20 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border font-['Manrope'];
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Manrope'] font-bold;
+  }
+
+  p, span, a, button {
+    @apply font-['Manrope'];
+  }
+
   body {
     @apply bg-background text-foreground;
-    font-family: 'Changa', sans-serif;
+    font-family: 'Manrope', sans-serif;
     background: radial-gradient(circle at top left, hsl(240 10% 3.9%), hsl(240 4% 16%));
     min-height: 100vh;
   }
@@ -70,7 +79,7 @@
     rgba(26, 29, 41, 0.2) 85%,
     rgba(252, 176, 95, 0.1) 100%
   );
-  font-family: 'Changa';
+  font-family: 'Manrope';
 }
 
 
@@ -91,7 +100,7 @@
 }
 
 .global-font{
-  font-family: 'Changa', sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 
 .glow::before {
@@ -109,7 +118,7 @@
 }
 
 body {
-  font-family: 'Changa', sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 
 /* Add these styles to hide scrollbar but maintain functionality */

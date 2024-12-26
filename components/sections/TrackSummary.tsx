@@ -19,7 +19,7 @@ export function TrackSummary() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4">Track Summary</h2>
+          <h2 className="text-4xl font-bold mb-4 font-global">Track Summary</h2>
           <p className="text-2xl text-orange-500 font-semibold">
             "Innovate & Educate: AI & Web3 Learning Modules for the Venture Meda Bot"
           </p>
