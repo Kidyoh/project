@@ -50,7 +50,7 @@ export function Prizes() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-4xl font-bold mb-4">PRIZES</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6 global-font bg-clip-text text-transparent bg-gradient-to-r from-[#FCB05F] to-[#CE3B1E]">Prizes</h2>
             <p className="text-gray-400">Win amazing prizes and opportunities</p>
           </motion.div>
         </div>

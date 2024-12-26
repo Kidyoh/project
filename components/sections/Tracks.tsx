@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Card } from "@/components/ui/card";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { AiOutlineRobot } from "react-icons/ai";
 import {BiBot} from "react-icons/bi";
@@ -188,30 +188,79 @@ export function Tracks() {
   });
 
   const [activeTrack, setActiveTrack] = useState("solana");
+  const [showScrollHint, setShowScrollHint] = useState(true);
+
+  useEffect(() => {
+    // Hide scroll hint after user has scrolled horizontally
+    const handleScroll = (e: Event) => {
+      const element = e.target as HTMLElement;
+      if (element.scrollLeft > 0) {
+        setShowScrollHint(false);
+      }
+    };
+
+    const scrollContainer = document.querySelector('.track-scroll-container');
+    scrollContainer?.addEventListener('scroll', handleScroll);
+
+    // Hide hint after 5 seconds anyway
+    const timer = setTimeout(() => setShowScrollHint(false), 5000);
+
+    return () => {
+      scrollContainer?.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
+    };
+  }, []);
 
   return (
     <section ref={ref} className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center mb-16">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 md:gap-8 mb-16">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5 }}
+            className="text-center md:text-left"
           >
-            <h2 className="text-4xl font-bold global-font">TRACKS</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FCB05F] to-[#CE3B1E]">
+              Tracks
+            </h2>
           </motion.div>
           <motion.p
             initial={{ opacity: 0, x: 20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="text-right text-gray-400"
+            className="text-center md:text-right text-gray-400"
           >
-            Build the coolest AI & Web3<br />
+            Build the coolest AI & Web3<br className="hidden sm:block" />
             Solutions across 3 Tracks
           </motion.p>
         </div>
 
-        <div className="flex overflow-x-auto space-x-4 mb-12 pb-4 scrollbar-hide">
+        <div className="scroll-container md:hidden mb-2">
+          <div 
+            className={`track-scroll-container flex overflow-x-auto space-x-4 mb-12 pb-4 scrollbar-hide ${
+              showScrollHint ? 'scroll-hint' : ''
+            }`}
+          >
+            {tracks.map((track) => (
+              <button
+                key={track.id}
+                onClick={() => setActiveTrack(track.id)}
+                className={cn(
+                  "px-6 py-3 whitespace-nowrap transition-all duration-300 rounded-full flex items-center space-x-2",
+                  activeTrack === track.id
+                    ? "bg-gradient-to-r from-orange-500/20 to-red-500/20 text-white border border-orange-500/50"
+                    : "text-gray-400 hover:text-gray-300 hover:bg-white/5"
+                )}
+              >
+                <span className="text-2xl">{track.icon}</span>
+                <span>{track.title}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="hidden md:flex space-x-4 mb-12">
           {tracks.map((track) => (
             <button
               key={track.id}

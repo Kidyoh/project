@@ -25,10 +25,10 @@ export function Partners() {
   ];
 
   const partners = [
-    { name: "AASTU SET", role: "Support Partner", logo: aastu },
-    { name: "GDG Addis", role: "Support Partner", logo: gdg },
-    { name: "Superteam", role: "Support Partner", logo: superteam },
-    { name: "DeanslistDAO", role: "Support Partner", logo: deanslist },
+    { name: "AASTU SET", role: "Partner", logo: aastu },
+    { name: "GDG Addis", role: "Partner", logo: gdg },
+    { name: "Superteam", role: "Partner", logo: superteam },
+    { name: "DeanslistDAO", role: "Partner", logo: deanslist },
   ];
 
   return (
