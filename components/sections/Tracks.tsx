@@ -325,7 +325,7 @@ export function Tracks() {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="group"
                 >
-                  <div className="p-6 bg-white/5 rounded-lg border border-white/10 hover:border-orange-500/50 transition-all duration-300">
+                  <div className="p-6 bg-white/5 rounded-lg border h-32 border-white/10 hover:border-orange-500/50 transition-all duration-300">
                     <div className="flex items-start space-x-4">
                       <span className="text-3xl">{workshop.icon}</span>
                       <div>
