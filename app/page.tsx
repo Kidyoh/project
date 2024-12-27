@@ -6,10 +6,7 @@ import { Registration } from "@/components/sections/Registration";
 import { Partners } from "@/components/sections/Partners";
 import { FAQ } from "@/components/sections/FAQ";
 import { Footer } from "@/components/Footer";
-import Image from 'next/image'
-import Logo from '../public/venture_new_logo-aa8ce9b0.svg'
 import { Tracks } from "@/components/sections/Tracks";
-import { Prizes } from "@/components/sections/Prizes";
 import { TrackSummary } from "@/components/sections/TrackSummary";
 import { Navbar } from "@/components/Navbar";
 
@@ -34,9 +31,6 @@ export default function Home() {
       </div>
       <div id="track-summary">
         <TrackSummary />
-      </div>
-      <div id="prizes">
-        <Prizes />
       </div>
       <div id="registration">
         <Registration />
