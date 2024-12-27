@@ -42,7 +42,7 @@ export function About() {
               </div>
               <div>
                 <h3 className="font-semibold mb-2 text-primary">Supported by:</h3>
-                <p className="text-muted-foreground">AASTU SET, GDG, Superteam, and DeanslistDAO</p>
+                <p className="text-muted-foreground">AASTU SEA, GDG on campus AASTU, Superteam, and DeanslistDAO</p>
               </div>
             </div>
           </Card>

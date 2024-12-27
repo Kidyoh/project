@@ -25,8 +25,8 @@ export function Partners() {
   ];
 
   const partners = [
-    { name: "AASTU SET", role: "Partner", logo: aastu },
-    { name: "GDG Addis", role: "Partner", logo: gdg },
+    { name: "AASTU SEA", role: "Partner", logo: aastu },
+    { name: "GDG on campus AASTU", role: "Partner", logo: gdg },
     { name: "Superteam", role: "Partner", logo: superteam },
     { name: "DeanslistDAO", role: "Partner", logo: deanslist },
   ];
