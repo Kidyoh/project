@@ -15,22 +15,22 @@ export function Benefits() {
     {
       icon: <Trophy className="h-8 w-8" />,
       title: "Grand Prize",
-      gradient: "from-yellow-500/20 via-orange-500/20 to-red-500/20"
+      gradient: "bg-white/5"
     },
     {
       icon: <Users className="h-8 w-8" />,
       title: "Expert Mentorship",
-      gradient: "from-blue-500/20 via-indigo-500/20 to-purple-500/20"
+      gradient: "bg-white/5"
     },
     {
       icon: <Lightbulb className="h-8 w-8" />,
       title: "Skill Development",
-      gradient: "from-green-500/20 via-emerald-500/20 to-teal-500/20"
+      gradient: "bg-white/5"
     },
     {
       icon: <Wrench className="h-8 w-8" />,
       title: "Tools & Support",
-      gradient: "from-pink-500/20 via-rose-500/20 to-red-500/20"
+      gradient: "bg-white/5"
     },
   ];
 
