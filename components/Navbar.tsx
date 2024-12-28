@@ -7,14 +7,14 @@ import Logo from "@/public/venture_new_logo-aa8ce9b0.svg";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { name: "About", href: "#about" },
-  { name: "Event Details", href: "#event-details" },
+  // { name: "About", href: "#about" },
+  // { name: "Event Details", href: "#event-details" },
   { name: "Benefits", href: "#benefits" },
   { name: "Tracks", href: "#tracks" },
   // { name: "Prizes", href: "#prizes" },
-  { name: "Register", href: "#registration" },
+  // { name: "Register", href: "#registration" },
   { name: "Partners", href: "#partners" },
-  { name: "FAQ", href: "#faq" },
+  // { name: "FAQ", href: "#faq" },
 ];
 
 export function Navbar() {

@@ -307,8 +307,8 @@ export function Tracks() {
                         ))}
                       </div>
                     </div>
-
-                    <div>
+                    {/*Judging Criteria*/}
+                    {/* <div>
                       <h4 className="text-2xl font-semibold mb-6 text-white flex items-center">
                         <span className="text-orange-500 mr-2">⚖️</span> Judging Criteria
                       </h4>
@@ -338,7 +338,7 @@ export function Tracks() {
                           </motion.div>
                         ))}
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </Card>
@@ -352,7 +352,7 @@ export function Tracks() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-16"
         >
-          <Card className="p-8 bg-black/20 border border-gray-800">
+          {/* <Card className="p-8 bg-black/20 border border-gray-800">
             <h3 className="text-2xl font-semibold mb-8 text-white flex items-center">
               <span className="text-orange-500 mr-3 font-global">📚</span> Workshops & Learning Sessions
             </h3>
@@ -388,7 +388,7 @@ export function Tracks() {
                 </motion.div>
               ))}
             </div>
-          </Card>
+          </Card> */}
         </motion.div>
       </div>
     </section>

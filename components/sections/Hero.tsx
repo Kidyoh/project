@@ -1,15 +1,33 @@
 "use client";
 
+import { useState, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { RegistrationModal } from "@/components/sections/Registration";
 
 export function Hero() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+  const [showRegistrationModal, setShowRegistrationModal] = useState(false);
+
+  const handleKeyPress = useCallback((event: KeyboardEvent) => {
+    if (event.key === 'Escape') {
+      setShowRegistrationModal(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (showRegistrationModal) {
+      document.addEventListener('keydown', handleKeyPress);
+    }
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [showRegistrationModal, handleKeyPress]);
 
   return (
     <section ref={ref} className="min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6 lg:px-8 hero-gradient">
@@ -57,7 +75,7 @@ export function Hero() {
             <Button
               size="lg"
               className="text-base sm:text-lg px-8 py-6 bg-gradient-to-r from-[#FCB05F] to-[#CE3B1E] hover:opacity-90 transition-opacity"
-              onClick={() => document.getElementById('registration')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => setShowRegistrationModal(true)}
             >
               Register Now
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -100,6 +118,11 @@ export function Hero() {
           </motion.div>
         </motion.div>
       </div>
+
+      <RegistrationModal 
+        isOpen={showRegistrationModal}
+        onClose={() => setShowRegistrationModal(false)}
+      />
     </section>
   );
 }
