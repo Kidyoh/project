@@ -1,13 +1,7 @@
 import "./globals.css";
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Web3 Platform - Next Generation Blockchain Solutions",
-  description: "Empowering the future of decentralized applications with seamless blockchain integration",
-};
 
 export default function RootLayout({
   children,
