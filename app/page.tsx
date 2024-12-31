@@ -8,6 +8,7 @@ import { Partners } from "@/components/sections/Partners";
 import { Tracks } from "@/components/sections/Tracks";
 // import { TrackSummary } from "@/components/sections/TrackSummary";
 import { Navbar } from "@/components/Navbar";
+import { RegisterCTA } from "@/components/sections/RegisterCTA";
 
 export default function Home() {
   return (
@@ -22,12 +23,14 @@ export default function Home() {
       {/* <div id="event-details">
         <EventDetails />
       </div> */}
+ 
       <div id="benefits">
         <Benefits />
       </div>
       <div id="tracks">
         <Tracks />
       </div>
+      {/* <RegisterCTA /> */}
       {/* <div id="track-summary">
         <TrackSummary />
       </div> */}
@@ -41,6 +44,7 @@ export default function Home() {
         <FAQ />
       </div>
       <Footer /> */}
+      
     </main>
   );
 }

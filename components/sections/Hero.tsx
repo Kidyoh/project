@@ -46,7 +46,7 @@ export function Hero() {
             className="inline-block px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10"
           >
             <p className="text-base sm:text-lg text-gray-300">
-              February 5-15, 2024 • AASTU Old Graduation Hall
+              February 19, 2024 • Demo Day • AASTU Old Graduation Hall
             </p>
           </motion.div>
 
@@ -98,7 +98,7 @@ export function Hero() {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-12 sm:mt-16"
           >
             {[
-              { label: "Prize Pool", value: "60K ETB" },
+              { label: "Prize Pool", value: "100K ETB" },
               { label: "Tracks", value: "3" },
               { label: "Days", value: "10" },
               { label: "Workshops", value: "4+" },
