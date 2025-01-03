@@ -95,7 +95,7 @@ export function Navbar() {
                   <div className="flex items-center gap-4">
                     <div>
                       <p className="text-white/90 text-sm sm:text-base font-medium">
-                        <span className="text-orange-500">Registration Deadline:</span> February 3, 2024
+                        <span className="text-orange-500">Registration Deadline:</span> February 3, 2025
                       </p>
                       <p className="text-white/60 text-xs sm:text-sm mt-0.5">
                         Don't miss out on this opportunity!
