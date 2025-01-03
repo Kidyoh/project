@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Logo from "@/public/venture_new_logo-aa8ce9b0.svg";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Clock, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { RegistrationModal } from "@/components/sections/Registration";
 
 const navItems = [
   // { name: "About", href: "#about" },
@@ -21,6 +23,8 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showDisclaimer, setShowDisclaimer] = useState(true);
+  const [showRegistrationModal, setShowRegistrationModal] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,89 +70,148 @@ export function Navbar() {
   };
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || isMobileMenuOpen ? "bg-black/80 backdrop-blur-md" : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <Image
-              src={Logo}
-              alt="AASTU Web3 Hackathon Logo"
-              width={180}
-              height={60}
-              className="filter-white"
-            />
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className={`text-sm font-medium transition-colors hover:text-orange-500 ${
-                  activeSection === item.href.slice(1)
-                    ? "text-orange-500"
-                    : "text-gray-300"
-                }`}
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button 
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6 text-white" />
-            ) : (
-              <Menu className="h-6 w-6 text-white" />
-            )}
-          </button>
-        </div>
-
-        {/* Mobile Navigation Menu */}
+    <>
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className="fixed top-0 left-0 right-0 z-50 flex flex-col"
+      >
+        {/* Disclaimer Banner */}
         <AnimatePresence>
-          {isMobileMenuOpen && (
+          {showDisclaimer && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden overflow-hidden"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              className="w-full bg-gradient-to-r from-[#FCB05F] to-[#CE3B1E]"
             >
-              <div className="py-4 space-y-2 border-t border-white/10">
-                {navItems.map((item) => (
-                  <motion.button
-                    key={item.name}
-                    onClick={() => scrollToSection(item.href)}
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    exit={{ x: -20, opacity: 0 }}
-                    className={`w-full text-left px-4 py-3 text-sm font-medium transition-colors hover:bg-white/10 rounded-lg ${
-                      activeSection === item.href.slice(1)
-                        ? "text-orange-500 bg-white/5"
-                        : "text-gray-300"
-                    }`}
+              <div className="px-6 py-3 bg-black/95 backdrop-blur-sm">
+                <div className="flex items-center justify-center gap-4 max-w-4xl mx-auto relative">
+                  {/* Icon and content */}
+                  <div className="hidden sm:flex h-10 w-10 rounded-full bg-orange-500/10 items-center justify-center flex-shrink-0">
+                    <Clock className="h-5 w-5 text-orange-500" />
+                  </div>
+                  
+                  <div className="flex items-center gap-4">
+                    <div>
+                      <p className="text-white/90 text-sm sm:text-base font-medium">
+                        <span className="text-orange-500">Registration Deadline:</span> February 3, 2024
+                      </p>
+                      <p className="text-white/60 text-xs sm:text-sm mt-0.5">
+                        Don't miss out on this opportunity!
+                      </p>
+                    </div>
+                    
+                    <Button 
+                      size="sm"
+                      className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 text-sm whitespace-nowrap"
+                      onClick={() => setShowRegistrationModal(true)}
+                    >
+                      Register Now
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </div>
+
+                  {/* Close button - absolute positioned */}
+                  <button
+                    onClick={() => setShowDisclaimer(false)}
+                    className="absolute right-0 text-white/40 hover:text-white/80 transition-colors"
                   >
-                    {item.name}
-                  </motion.button>
-                ))}
+                    <X className="h-4 w-4" />
+                  </button>
+                </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
-    </motion.nav>
+
+        {/* Main Navigation */}
+        <div className={`w-full transition-all duration-300 ${
+          isScrolled || isMobileMenuOpen ? "bg-black/80 backdrop-blur-md" : "bg-transparent"
+        }`}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-20">
+              {/* Logo */}
+              <div className="flex-shrink-0">
+                <Image
+                  src={Logo}
+                  alt="AASTU Web3 Hackathon Logo"
+                  width={180}
+                  height={60}
+                  className="filter-white"
+                />
+              </div>
+
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex space-x-8">
+                {navItems.map((item) => (
+                  <button
+                    key={item.name}
+                    onClick={() => scrollToSection(item.href)}
+                    className={`text-sm font-medium transition-colors hover:text-orange-500 ${
+                      activeSection === item.href.slice(1)
+                        ? "text-orange-500"
+                        : "text-gray-300"
+                    }`}
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </div>
+
+              {/* Mobile Menu Button */}
+              <button 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
+                aria-label="Toggle menu"
+              >
+                {isMobileMenuOpen ? (
+                  <X className="h-6 w-6 text-white" />
+                ) : (
+                  <Menu className="h-6 w-6 text-white" />
+                )}
+              </button>
+            </div>
+
+            {/* Mobile Navigation Menu */}
+            <AnimatePresence>
+              {isMobileMenuOpen && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="md:hidden overflow-hidden"
+                >
+                  <div className="py-4 space-y-2 border-t border-white/10">
+                    {navItems.map((item) => (
+                      <motion.button
+                        key={item.name}
+                        onClick={() => scrollToSection(item.href)}
+                        initial={{ x: -20, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        exit={{ x: -20, opacity: 0 }}
+                        className={`w-full text-left px-4 py-3 text-sm font-medium transition-colors hover:bg-white/10 rounded-lg ${
+                          activeSection === item.href.slice(1)
+                            ? "text-orange-500 bg-white/5"
+                            : "text-gray-300"
+                        }`}
+                      >
+                        {item.name}
+                      </motion.button>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
+      </motion.nav>
+
+      <RegistrationModal 
+        isOpen={showRegistrationModal}
+        onClose={() => setShowRegistrationModal(false)}
+      />
+    </>
   );
 } 
