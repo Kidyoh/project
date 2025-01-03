@@ -44,7 +44,6 @@ export default function Home() {
         <FAQ />
       </div>
       <Footer /> */}
-      
     </main>
   );
 }

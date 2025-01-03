@@ -30,7 +30,7 @@ export function Hero() {
   }, [showRegistrationModal, handleKeyPress]);
 
   return (
-    <section ref={ref} className="min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6 lg:px-8 hero-gradient">
+    <section ref={ref} className="min-h-screen flex items-center justify-center pt-40 px-4 sm:px-6 lg:px-8 hero-gradient">
       <div className="max-w-7xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
