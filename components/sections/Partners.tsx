@@ -23,6 +23,9 @@ export function Partners() {
     { name: "Mastercard Foundation", role: "Organizer", logo: mastercard },
     { name: "MiNT", role: "Organizer", logo: mint },
     { name: "AASTU SEA", role: "Partner", logo: aastu },
+  ];
+  
+  const partners_remaining = [
     { name: "GDG on campus AASTU", role: "Partner", logo: gdg },
     { name: "Superteam", role: "Partner", logo: superteam },
     { name: "DeanslistDAO", role: "Partner", logo: deanslist },
@@ -40,13 +43,37 @@ export function Partners() {
           Our Organizers and Partners
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        {/* First row of partners */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {organizers_partners.map((org, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="w-full"
+            >
+              <Card className="p-6 text-center bg-black/50 backdrop-blur-sm hover:bg-black/60 transition-all duration-300 border border-white/10">
+                <Image
+                  src={org.logo}
+                  alt={`${org.name} logo`}
+                  className="mx-auto mb-4 h-32 w-32 object-contain logo-shadow"
+                />
+                <h3 className="font-semibold mb-2 text-white">{org.name}</h3>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Second row of partners - centered */}
+        <div className="mt-8 flex justify-center gap-8">
+          {partners_remaining.map((org, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="w-[calc(25%-24px)]"
             >
               <Card className="p-6 text-center bg-black/50 backdrop-blur-sm hover:bg-black/60 transition-all duration-300 border border-white/10">
                 <Image
