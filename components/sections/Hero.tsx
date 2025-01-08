@@ -43,11 +43,26 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.2 }}
-            className="inline-block px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10"
+            className="space-y-3"
           >
-            <p className="text-base sm:text-lg text-gray-300">
-              February 19, 2024 • Demo Day • AASTU Old Graduation Hall
-            </p>
+            {/* Date badge */}
+            <div className="inline-block px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
+              <p className="text-base sm:text-lg text-gray-300">
+                February 19, 2025 • Demo Day
+              </p>
+            </div>
+            
+            {/* Hybrid badge */}
+            <div className="flex items-center justify-center gap-4 text-sm sm:text-base">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
+                <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
+                <span className="text-gray-300">In Person: AASTU Old Graduation Hall</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
+                <div className="h-2 w-2 rounded-full bg-blue-500 animate-pulse"></div>
+                <span className="text-gray-300">Online: Zoom</span>
+              </div>
+            </div>
           </motion.div>
 
           {/* Main Title */}
