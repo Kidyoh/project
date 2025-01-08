@@ -44,7 +44,7 @@ export function Partners() {
         </h2>
 
         {/* First row of partners */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {organizers_partners.map((org, index) => (
             <motion.div
               key={index}
@@ -65,26 +65,28 @@ export function Partners() {
           ))}
         </div>
 
-        {/* Second row of partners - centered */}
-        <div className="mt-8 flex justify-center gap-8">
-          {partners_remaining.map((org, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="w-[calc(25%-24px)]"
-            >
-              <Card className="p-6 text-center bg-black/50 backdrop-blur-sm hover:bg-black/60 transition-all duration-300 border border-white/10">
-                <Image
-                  src={org.logo}
-                  alt={`${org.name} logo`}
-                  className="mx-auto mb-4 h-32 w-32 object-contain logo-shadow"
-                />
-                <h3 className="font-semibold mb-2 text-white">{org.name}</h3>
-              </Card>
-            </motion.div>
-          ))}
+        {/* Second row of partners - centered and responsive */}
+        <div className="mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:flex lg:justify-center gap-8 lg:gap-8">
+            {partners_remaining.map((org, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={inView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="w-full lg:w-[calc(25%-24px)]"
+              >
+                <Card className="p-6 text-center bg-black/50 backdrop-blur-sm hover:bg-black/60 transition-all duration-300 border border-white/10">
+                  <Image
+                    src={org.logo}
+                    alt={`${org.name} logo`}
+                    className="mx-auto mb-4 h-32 w-32 object-contain logo-shadow"
+                  />
+                  <h3 className="font-semibold mb-2 text-white">{org.name}</h3>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </motion.div>
     </section>
