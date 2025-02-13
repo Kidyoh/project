@@ -2,7 +2,7 @@
 
 import { Modal } from "@/components/ui/Modal";
 import { HubspotForm } from "@/components/HubspotForm";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 
 interface RegistrationModalProps {
@@ -14,7 +14,16 @@ export const RegistrationModal = ({
   isOpen,
   onClose
 }: RegistrationModalProps) => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isRegistrationClosed, setIsRegistrationClosed] = useState(false);
+
+  useEffect(() => {
+    // Check if registration is closed based on current time
+    const now = new Date();
+    const registrationDeadline = new Date("2025-02-03T00:00:00");
+    if (now > registrationDeadline) {
+      setIsRegistrationClosed(true);
+    }
+  }, []);
 
   return (
     <Modal 
@@ -38,23 +47,26 @@ export const RegistrationModal = ({
 
         {/* Scrollable Content */}
         <div className="flex-1 overflow-y-auto px-6 py-8 sm:px-8 md:px-10">
-          {/* Loading state */}
-          {isLoading && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black/50 z-10">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500" />
+          {/* Registration Closed Message */}
+          {isRegistrationClosed ? (
+            <div className="flex flex-col items-center justify-center h-full text-white">
+              <h2 className="text-3xl font-bold mb-4">Registration is Now Closed</h2>
+              <p className="text-lg text-gray-300">
+                Thank you for your interest in the AASTU Web3 Hackathon.
+                Registration is now closed. Stay tuned for future events!
+              </p>
+            </div>
+          ) : (
+            /* Form */
+            <div className="relative">
+              <HubspotForm 
+                onFormReady={() => console.log("form ready")}
+                className="bg-transparent"
+              />
             </div>
           )}
-
-          {/* Form */}
-          <div className="relative">
-            <HubspotForm 
-              onFormReady={() => setIsLoading(false)}
-              className="bg-transparent"
-            />
-          </div>
         </div>
       </div>
     </Modal>
   );
 };
-
